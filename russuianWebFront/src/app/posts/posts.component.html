@@ -1,1 +1,18 @@
-<p>posts works!</p>
+<p-table [value]="posts">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Onvan</th>
+            <th>TarikheEnteshar</th>
+            <th>KholaseyePost</th>
+            <th>MatneKamelePost</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-post>
+        <tr>
+            <td>{{post.Onvan}}</td>
+            <td>{{post.TarikheEnteshar}}</td>
+            <td>{{post.KholaseyePost}}</td>
+            <td>{{post.MatneKamelePost}}</td>
+        </tr>
+    </ng-template>
+</p-table>
