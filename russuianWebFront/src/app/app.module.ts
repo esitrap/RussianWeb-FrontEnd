@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AccordionModule} from 'primeng/accordion';
 import { UsersComponent } from './managerPanel/users/users.component';
-import { PostsComponent } from './managerPanel/postsManager/posts.component';
-import { PostDetailComponent } from './managerPanel/postsManager/post-detailManager/post-detail.component';
+import { PostsComponent } from './managerPanel/postsManager/posts/posts.component';
+import { PostDetailComponent } from './managerPanel/postsManager/posts/post-detailManager/post-detail.component';
 
 @NgModule({
   declarations: [
