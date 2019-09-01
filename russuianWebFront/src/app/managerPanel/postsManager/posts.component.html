@@ -1,0 +1,18 @@
+<p-table [value]="post">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>متن کامل</th>
+            <th>خلاصه پست</th>
+            <th>تاریخ انتشار</th>
+            <th>عنوان</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-post>
+        <tr>
+            <td>{{post.Onvan}}</td>
+            <td>{{post.TarikheEnteshar}}</td>
+            <td>{{post.KholaseyePost}}</td>
+            <td>{{post.MatneKamelePost}}</td>
+        </tr>
+    </ng-template>
+</p-table>
