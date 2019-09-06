@@ -7,6 +7,8 @@ import {AccordionModule} from 'primeng/accordion';
 import { UsersComponent } from './managerPanel/users/users.component';
 import { PostsComponent } from './managerPanel/postsManager/posts/posts.component';
 import { PostDetailComponent } from './managerPanel/postsManager/posts/post-detailManager/post-detail.component';
+import { PostsService } from './posts.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { PostDetailComponent } from './managerPanel/postsManager/posts/post-deta
     BrowserModule,
     AppRoutingModule,
     TableModule,
-     AccordionModule
+     AccordionModule,
+     HttpClientModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

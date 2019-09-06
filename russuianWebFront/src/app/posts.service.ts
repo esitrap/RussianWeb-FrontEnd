@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from './posts/post';
 import { Observable ,of } from 'rxjs';
+import { postManager } from './managerPanel/postsManager/Post';
 
 
 
@@ -12,13 +12,13 @@ import { Observable ,of } from 'rxjs';
 })
 export class PostsService {
 
-  private postUrl = 'api/Post'
+  private postUrl = 'api/Posts'
 
   constructor(private http: HttpClient) { }
   
   
-  getPosts(): Observable<Post[]> {
-      this.http.get('PostsService')
-      return of();
+  getPosts(): Observable<postManager[]> {
+    return this.http.get<postManager[]>('api/Posts')
+    
    }
 }

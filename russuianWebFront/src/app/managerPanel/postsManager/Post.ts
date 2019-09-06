@@ -1,6 +1,6 @@
-export class post {
+export class postManager {
     onvan : string;
     tarikheEnteshar : Date;
     KholaseyePost : string;
-    MatneKamelePost : string;
+    matneKamelePost : string;
 }

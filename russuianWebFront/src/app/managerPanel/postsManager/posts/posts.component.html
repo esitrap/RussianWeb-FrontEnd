@@ -1,4 +1,4 @@
-<p-table [value]="post">
+<p-table [value]="posts">
     <ng-template pTemplate="header">
         <tr>
             <th>متن کامل</th>
@@ -9,10 +9,10 @@
     </ng-template>
     <ng-template pTemplate="body" let-post>
         <tr>
-            <td>{{post.Onvan}}</td>
-            <td>{{post.TarikheEnteshar}}</td>
-            <td>{{post.KholaseyePost}}</td>
-            <td>{{post.MatneKamelePost}}</td>
+            <td>{{post.matneKamelePost}}</td>
+            <td>{{post.kholaseyePost}}</td>
+            <td>{{post.tarikheEnteshar}}</td>
+            <td>{{post.onvan}}</td>
         </tr>
     </ng-template>
 </p-table>
