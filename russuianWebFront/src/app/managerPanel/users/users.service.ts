@@ -16,10 +16,12 @@ export class UsersService {
     return this.http.get<usersManager[]>('api/Users')
   };
   addUsers(user:usersManager): Observable<any>{
-    return this.http.post(this.userUrl,user)
+    return this.http.post(this.userUrl,{userName:user.userName,password:user.password})
   };
-  deleteUser(user:usersManager |string ): void {
-    const id = typeof user === 'string' ? usersManager : user.userName;
-    const url = `${this.userUrl}/${usersManager}`;
+  deleteUser(user:usersManager){
+    const url = `${this.userUrl}/${user.id}`;
+    return this.http.delete(url);
+    // const id = typeof user === 'string' ? usersManager : user.userName;
+    // const url = `${this.userUrl}/${usersManager}`;
   }
 }

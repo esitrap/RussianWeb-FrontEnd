@@ -10,7 +10,8 @@ import { UsersService } from './users.service';
 })
 export class UsersComponent implements OnInit {
   users: usersManager[]
-
+  username: string;
+  password: string;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
@@ -21,20 +22,22 @@ export class UsersComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
-  add(event: string) {
-    if (!event) { return; }
+  add() {
+
     this.userService.addUsers({
-      id :'',
-      userName: event,
-      password: event,
+      id: null,
+      userName: this.username,
+      password: this.password,
     }).subscribe(
       user => {
-        debugger; this.users.push(user);
+        this.users.push(user);
       }
     );
-    deleteUser(this.users: usersManager): void {
-      this.user = this.users.filter(u => u !== usersManager);
-      this.userService.deleteUser(this.users).subscribe();
-    }
   }
+  deleteUser(user:usersManager){
+    this.userService.deleteUser(user)
+    .subscribe (x=> {
+      this.getUsers();
+    })
+  } 
 }

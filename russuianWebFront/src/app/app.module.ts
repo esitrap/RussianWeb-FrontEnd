@@ -11,6 +11,8 @@ import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http'
 import { UsersService } from './managerPanel/users/users.service';
 import { ButtonModule } from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ButtonModule } from 'primeng/button';
     TableModule,
     AccordionModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    FormsModule,
   ],
   providers: [PostsService, UsersService],
   bootstrap: [AppComponent]
