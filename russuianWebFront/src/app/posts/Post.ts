@@ -1,6 +1,6 @@
 export class Post {
     onvan : string;
     tarikheEnteshar : Date;
-    KholaseyePost : string;
+    kholaseyePost : string;
     matneKamelePost : string;
 }

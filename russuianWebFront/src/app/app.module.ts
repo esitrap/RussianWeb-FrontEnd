@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AccordionModule} from 'primeng/accordion';
+import { AccordionModule } from 'primeng/accordion';
 import { UsersComponent } from './managerPanel/users/users.component';
 import { PostsComponent } from './managerPanel/postsManager/posts/posts.component';
 import { PostDetailComponent } from './managerPanel/postsManager/posts/post-detailManager/post-detail.component';
 import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http'
 import { UsersService } from './managerPanel/users/users.service';
-
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -23,10 +23,11 @@ import { UsersService } from './managerPanel/users/users.service';
     BrowserModule,
     AppRoutingModule,
     TableModule,
-     AccordionModule,
-     HttpClientModule
+    AccordionModule,
+    HttpClientModule,
+    ButtonModule
   ],
-  providers: [PostsService,UsersService],
+  providers: [PostsService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
