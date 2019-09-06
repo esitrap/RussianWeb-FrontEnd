@@ -9,6 +9,8 @@ import { PostsComponent } from './managerPanel/postsManager/posts/posts.componen
 import { PostDetailComponent } from './managerPanel/postsManager/posts/post-detailManager/post-detail.component';
 import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http'
+import { UsersService } from './managerPanel/users/users.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http'
      AccordionModule,
      HttpClientModule
   ],
-  providers: [PostsService],
+  providers: [PostsService,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
