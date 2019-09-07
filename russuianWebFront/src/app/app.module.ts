@@ -13,6 +13,7 @@ import { UsersService } from './managerPanel/users/users.service';
 import { ButtonModule } from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     InputTextModule,
     FormsModule,
+    PasswordModule
   ],
   providers: [PostsService, UsersService],
   bootstrap: [AppComponent]
