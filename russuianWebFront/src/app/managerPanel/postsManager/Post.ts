@@ -1,6 +1,6 @@
 export class postManager {
     onvan : string;
     tarikheEnteshar : Date;
-    KholaseyePost : string;
+    kholaseyePost : string;
     matneKamelePost : string;
 }

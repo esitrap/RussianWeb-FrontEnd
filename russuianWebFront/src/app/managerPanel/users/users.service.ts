@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'; 
+import { Observable } from 'rxjs';
 import { usersManager } from './usersManager';
 
 
@@ -9,19 +9,17 @@ import { usersManager } from './usersManager';
 })
 export class UsersService {
   private userUrl = 'api/Users'
-  
+
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<usersManager[]> {
     return this.http.get<usersManager[]>('api/Users')
   };
-  addUsers(user:usersManager): Observable<any>{
-    return this.http.post(this.userUrl,{userName:user.userName,password:user.password})
+  addUsers(user: usersManager): Observable<any> {
+    return this.http.post(this.userUrl, { userName: user.userName, password: user.password })
   };
-  deleteUser(user:usersManager){
+  deleteUser(user: usersManager) {
     const url = `${this.userUrl}/${user.id}`;
     return this.http.delete(url);
-    // const id = typeof user === 'string' ? usersManager : user.userName;
-    // const url = `${this.userUrl}/${usersManager}`;
   }
 }
