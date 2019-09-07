@@ -39,7 +39,7 @@ export class PostsComponent implements OnInit {
       }
     );
   }
-  deleteUser(post: postManager) {
+  deletePosts(post: postManager) {
     this.postsService.deletePosts(post)
       .subscribe(x => {
         this.getPosts();

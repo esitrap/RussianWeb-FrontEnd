@@ -5,6 +5,7 @@
             <th>خلاصه پست</th>
             <th>تاریخ انتشار</th>
             <th>عنوان</th>
+            <th style="width:4em"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-post>
@@ -13,24 +14,24 @@
             <td>{{post.kholaseyePost}}</td>
             <td>{{post.tarikheEnteshar}}</td>
             <td>{{post.onvan}}</td>
+            <td>
+                <button pButton icon="fa-search" (click)="deletePosts(post)"></button>
+            </td>
         </tr>
     </ng-template>
 </p-table>
 <div>
-    <label>عنوان:
-        <input type="text" pInputText [(ngModel)]="onvan"/>
+    <label>متن کامل:
+        <input type="text" pInputText [(ngModel)]="matneKamelePost" />
     </label>
     <label>خلاصه پست:
-        <input type="text" pInputText [(ngModel)]="kholaseyePost"/>
+        <input type="text" pInputText [(ngModel)]="kholaseyePost" />
     </label>
     <label>تاریخ انتشار:
-        <input type="date" pInputText [(ngModel)]="tarikheEnteshar"/>
+        <input type="date" pInputText [(ngModel)]="tarikheEnteshar" />
     </label>
-    <label>متن کامل:
-        <input type="text" pInputText [(ngModel)]="matneKamelePost"/>
+    <label>عنوان:
+        <input type="text" pInputText [(ngModel)]="onvan" />
     </label>
-
-
 </div>
-<button pButton type="button" class="ui-button-raised ui-button-rounded" label="add"
-    (click)="add()"></button>
+<button pButton type="button" class="ui-button-raised ui-button-rounded" label="add" (click)="add()"></button>
