@@ -21,7 +21,7 @@ export class PostsService {
     return this.http.get<postManager[]>('api/Posts')
   }
   addPosts(post: postManager): Observable<any> {
-    return this.http.post(this.postUrl, {post})
+    return this.http.post(this.postUrl, post)
   };
   deletePosts(post: postManager) {
     const url = `${this.postUrl}/${post.onvan}`;
