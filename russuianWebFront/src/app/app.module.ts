@@ -14,6 +14,8 @@ import { ButtonModule } from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import {PasswordModule} from 'primeng/password';
+import { CreatePostComponent } from './managerPanel/postsManager/posts/create-post/create-post.component';
+import { CreateuserComponent } from './managerPanel/users/createuser/createuser.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {PasswordModule} from 'primeng/password';
     UsersComponent,
     PostsComponent,
     PostDetailComponent,
+    CreatePostComponent,
+    CreateuserComponent,
   ],
   imports: [
     BrowserModule,

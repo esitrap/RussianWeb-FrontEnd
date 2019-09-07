@@ -20,18 +20,4 @@
         </tr>
     </ng-template>
 </p-table>
-<div>
-    <label>متن کامل:
-        <input type="text" pInputText [(ngModel)]="matneKamelePost" />
-    </label>
-    <label>خلاصه پست:
-        <input type="text" pInputText [(ngModel)]="kholaseyePost" />
-    </label>
-    <label>تاریخ انتشار:
-        <input type="date" pInputText [(ngModel)]="tarikheEnteshar" />
-    </label>
-    <label>عنوان:
-        <input type="text" pInputText [(ngModel)]="onvan" />
-    </label>
-</div>
-<button pButton type="button" class="ui-button-raised ui-button-rounded" label="add" (click)="add()"></button>
+<app-create-post></app-create-post>
