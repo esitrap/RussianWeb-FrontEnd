@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 import {PasswordModule} from 'primeng/password';
 import { CreatePostComponent } from './managerPanel/postsManager/posts/create-post/create-post.component';
 import { CreateuserComponent } from './managerPanel/users/createuser/createuser.component';
+import { DeleteUserComponent } from './managerPanel/users/delete-user/delete-user.component';
+import { EditPostComponent } from './managerPanel/postsManager/posts/edit-post/edit-post.component';
+import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { CreateuserComponent } from './managerPanel/users/createuser/createuser.
     PostDetailComponent,
     CreatePostComponent,
     CreateuserComponent,
+    DeleteUserComponent,
+    EditPostComponent,
+    EditUserComponent,
+
   ],
   imports: [
     BrowserModule,

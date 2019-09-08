@@ -20,10 +20,4 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
   }
-    deleteUser(user:usersManager){
-    this.userService.deleteUser(user)
-    .subscribe (x=> {
-      this.getUsers();
-    })
-  } 
 }
