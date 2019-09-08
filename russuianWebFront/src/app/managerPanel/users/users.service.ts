@@ -8,6 +8,7 @@ import { usersManager } from './usersManager';
   providedIn: 'root'
 })
 export class UsersService {
+  [x: string]: any;
   private userUrl = 'api/Users'
 
   constructor(private http: HttpClient) { }
@@ -21,5 +22,9 @@ export class UsersService {
   deleteUser(user: usersManager) {
     const url = `${this.userUrl}/${user.id}`;
     return this.http.delete(url);
+  }
+  updateUser(user: usersManager) {
+    const url = `${this.userUrl}/${user.id}`;
+    return this.http.put(url,user);
   }
 }

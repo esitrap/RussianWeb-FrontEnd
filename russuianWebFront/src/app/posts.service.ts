@@ -27,4 +27,8 @@ export class PostsService {
     const url = `${this.postUrl}/${post.onvan}`;
     return this.http.delete(url);
   }
+  updatePost(post: postManager) {
+    const url = `${this.postUrl}/${post.onvan}`;
+    return this.http.put(url,post);
+  }
 }

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AccordionModule } from 'primeng/accordion';
 import { UsersComponent } from './managerPanel/users/users.component';
 import { PostsComponent } from './managerPanel/postsManager/posts/posts.component';
-import { PostDetailComponent } from './managerPanel/postsManager/posts/post-detailManager/post-detail.component';
 import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http'
 import { UsersService } from './managerPanel/users/users.service';
@@ -16,9 +15,9 @@ import { FormsModule } from '@angular/forms';
 import {PasswordModule} from 'primeng/password';
 import { CreatePostComponent } from './managerPanel/postsManager/posts/create-post/create-post.component';
 import { CreateuserComponent } from './managerPanel/users/createuser/createuser.component';
-import { DeleteUserComponent } from './managerPanel/users/delete-user/delete-user.component';
 import { EditPostComponent } from './managerPanel/postsManager/posts/edit-post/edit-post.component';
 import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.component';
+
 
 
 @NgModule({
@@ -26,10 +25,8 @@ import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.comp
     AppComponent,
     UsersComponent,
     PostsComponent,
-    PostDetailComponent,
     CreatePostComponent,
     CreateuserComponent,
-    DeleteUserComponent,
     EditPostComponent,
     EditUserComponent,
 
@@ -43,7 +40,7 @@ import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.comp
     ButtonModule,
     InputTextModule,
     FormsModule,
-    PasswordModule
+    PasswordModule,
   ],
   providers: [PostsService, UsersService],
   bootstrap: [AppComponent]
