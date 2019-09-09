@@ -13,6 +13,11 @@ import { postManager } from '../Post';
 export class PostsComponent implements OnInit {
 
   posts: postManager[]
+  
+  onvan: string;
+  tarikheEnteshar: Date;
+  kholaseyePost: string;
+  matneKamelePost: string;
 
   constructor(private postsService: PostsService) { }
 

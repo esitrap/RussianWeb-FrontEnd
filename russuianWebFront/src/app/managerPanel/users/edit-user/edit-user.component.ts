@@ -9,20 +9,23 @@ import { UsersService } from '../users.service';
 })
 export class EditUserComponent implements OnInit {
   users: usersManager[]
-
+  id: string;
+  username: string;
+  password: string;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
-    this.getUsers();
+
   }
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users);
+  setForm(user: usersManager): void {
+    this.username = user.userName;
+    this.password = user.password;
+
   }
-  updateUser(user: usersManager) {
-    this.userService.updateUser(user)
+  updateUser() {
+    this.userService.updateUser({id:this.id,userName: this.username, password: this.password})
       .subscribe(x => {
-        this.getUsers();
+
       })
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UsersService } from '../users.service';
 import { usersManager } from '../usersManager';
 
@@ -14,14 +14,11 @@ export class CreateuserComponent implements OnInit {
   users: usersManager[]
   username: string;
   password: string;
+  @Output() userCreated = new EventEmitter();
   ngOnInit() {
-    this.getUsers();
+
   }
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users);
-  }
-  add() {
+    add() {
 
     this.userService.addUsers({
       id: null,
@@ -29,7 +26,7 @@ export class CreateuserComponent implements OnInit {
       password: this.password,
     }).subscribe(
       user => {
-        this.users.push(user);
+        this.userCreated.emit();
       }
     );
   }

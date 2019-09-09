@@ -1,1 +1,12 @@
-<p>edit-user works!</p>
+<div>
+    <label>نام کاربری:
+        <input type="text" pInputText [(ngModel)]="username"/>
+    </label>
+    <label>رمز عبور:
+        <input type="password" pInputText [(ngModel)]="password"/>
+    </label>
+
+
+</div>
+<button pButton type="button" class="ui-button-raised ui-button-rounded" label="update"
+    (click)="updateUser()"></button>

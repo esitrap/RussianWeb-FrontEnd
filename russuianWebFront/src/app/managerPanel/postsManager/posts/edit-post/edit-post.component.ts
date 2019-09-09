@@ -10,20 +10,26 @@ import { postManager } from '../../Post';
 export class EditPostComponent implements OnInit {
 
   posts: postManager[]
+  onvan: string;
+  tarikheEnteshar: Date;
+  kholaseyePost: string;
+  matneKamelePost: string;
 
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    this.getPosts();
+
   }
-  getPosts(): void {
-    this.postsService.getPosts()
-      .subscribe(posts => this.posts = posts)
+  setForm(post: postManager): void {
+    this.onvan = post.onvan;
+    this.kholaseyePost = post.kholaseyePost
+    this.tarikheEnteshar = post.tarikheEnteshar
+    this.matneKamelePost = post.matneKamelePost
   }
-  updatePost(post: postManager) {
-    this.postsService.updatePost(post)
+  updatePost() {
+    this.postsService.updatePost({ onvan: this.onvan, kholaseyePost: this.kholaseyePost, matneKamelePost: this.matneKamelePost, tarikheEnteshar: this.tarikheEnteshar })
       .subscribe(x => {
-        this.getPosts();
+
       })
-    }
+  }
 }

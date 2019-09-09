@@ -3,6 +3,7 @@
         <tr>
             <th>نام کاربری</th>
             <th>رمز عبور</th>
+            <th style="width:4em">ویرایش</th>
             <th style="width:4em">حذف</th>
         </tr>
     </ng-template>
@@ -11,10 +12,14 @@
             <td>{{user.userName}}</td>
             <td>{{user.password}}</td>
             <td>
+                <button pButton icon="fa-search" (click)="setForm(user)"></button>
+            </td>
+            <td>
                 <button pButton icon="fa-search" (click)="deleteUser(user)"></button>
             </td>
         </tr>
     </ng-template>
 </p-table>
-<app-createuser></app-createuser>
+<app-createuser (userCreated)="getUsers()"></app-createuser>
 <app-edit-user></app-edit-user>
+
