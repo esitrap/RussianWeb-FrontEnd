@@ -25,6 +25,6 @@ export class UsersService {
   }
   updateUser(user: usersManager) {
     const url = `${this.userUrl}/${user.id}`;
-    return this.http.put(url,user);
+    return this.http.put(url, user);
   }
 }

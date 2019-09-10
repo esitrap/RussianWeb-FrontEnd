@@ -25,5 +25,5 @@
     </ng-template>
 </p-table>
 <app-create-post (postCreated)="getPosts()"></app-create-post>
-<app-edit-post></app-edit-post>
+<app-edit-post [item]="selected" *ngIf="selected" (postEdited)="getPosts()" ></app-edit-post>
 

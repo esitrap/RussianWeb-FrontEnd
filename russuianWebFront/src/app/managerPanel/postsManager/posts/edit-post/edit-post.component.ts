@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { PostsService } from 'src/app/posts.service';
 import { postManager } from '../../Post';
 
@@ -8,28 +8,18 @@ import { postManager } from '../../Post';
   styleUrls: ['./edit-post.component.css']
 })
 export class EditPostComponent implements OnInit {
-
-  posts: postManager[]
-  onvan: string;
-  tarikheEnteshar: Date;
-  kholaseyePost: string;
-  matneKamelePost: string;
+  @Input() item: postManager;
+  @Output() postEdited = new EventEmitter();
 
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
 
   }
-  setForm(post: postManager): void {
-    this.onvan = post.onvan;
-    this.kholaseyePost = post.kholaseyePost
-    this.tarikheEnteshar = post.tarikheEnteshar
-    this.matneKamelePost = post.matneKamelePost
-  }
   updatePost() {
-    this.postsService.updatePost({ onvan: this.onvan, kholaseyePost: this.kholaseyePost, matneKamelePost: this.matneKamelePost, tarikheEnteshar: this.tarikheEnteshar })
+    this.postsService.updatePost(this.item)
       .subscribe(x => {
-
+        this.postEdited.emit();
       })
   }
 }

@@ -13,11 +13,8 @@ import { postManager } from '../Post';
 export class PostsComponent implements OnInit {
 
   posts: postManager[]
-  
-  onvan: string;
-  tarikheEnteshar: Date;
-  kholaseyePost: string;
-  matneKamelePost: string;
+
+  selected: postManager;
 
   constructor(private postsService: PostsService) { }
 
@@ -33,5 +30,8 @@ export class PostsComponent implements OnInit {
       .subscribe(x => {
         this.getPosts();
       })
+  }
+  setForm(post: postManager): void {
+this.selected =Object.assign({},post);
   }
 }

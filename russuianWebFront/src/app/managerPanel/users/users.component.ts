@@ -10,7 +10,7 @@ import { UsersService } from './users.service';
 })
 export class UsersComponent implements OnInit {
   users: usersManager[]
-
+  selected: usersManager;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
@@ -25,5 +25,8 @@ export class UsersComponent implements OnInit {
       .subscribe(x => {
         this.getUsers();
       })
+  }
+  setForm(user: usersManager): void {
+    this.selected =Object.assign({},user);
   }
 }
