@@ -21,5 +21,7 @@
     </ng-template>
 </p-table>
 <app-createuser (userCreated)="getUsers()"></app-createuser>
-<app-edit-user [item]="selected" *ngIf="selected" (userEdited)="getUsers()" ></app-edit-user>
 
+<p-dialog header="ویرایش کاربر" [(visible)]="display">
+    <app-edit-user [item]="selected" *ngIf="selected" (userEdited)="getUsers()"></app-edit-user>
+</p-dialog>

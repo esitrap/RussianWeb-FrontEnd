@@ -1,12 +1,12 @@
+<p-dialog header="ایجاد کاربر" [(visible)]="display">
 <div>
     <label>نام کاربری:
-        <input type="text" pInputText [(ngModel)]="username"/>
+        <input type="text" pInputText [(ngModel)]="username" />
     </label>
     <label>رمز عبور:
-        <input type="password" pInputText [(ngModel)]="password"/>
+        <input type="password" pInputText [(ngModel)]="password" />
     </label>
-
-
+    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="ایجاد کاربر" (click)="add()"></button>
 </div>
-<button pButton type="button" class="ui-button-raised ui-button-rounded" label="add"
-    (click)="add()"></button>
+</p-dialog>
+<button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="ایجاد کاربر"></button>

@@ -28,5 +28,11 @@ export class UsersComponent implements OnInit {
   }
   setForm(user: usersManager): void {
     this.selected =Object.assign({},user);
+    this.showDialog();
+  }
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
   }
 }

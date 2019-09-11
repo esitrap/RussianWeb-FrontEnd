@@ -17,7 +17,6 @@ export class CreatePostComponent implements OnInit {
   matneKamelePost: string;
   @Output() postCreated = new EventEmitter();
 
-
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
@@ -35,5 +34,10 @@ export class CreatePostComponent implements OnInit {
         this.postCreated.emit();
       }
     );
+  }
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
   }
 }

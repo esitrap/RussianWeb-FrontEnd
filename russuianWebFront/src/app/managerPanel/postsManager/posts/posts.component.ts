@@ -32,6 +32,12 @@ export class PostsComponent implements OnInit {
       })
   }
   setForm(post: postManager): void {
-this.selected =Object.assign({},post);
+    this.selected = Object.assign({}, post);
+    this.showDialog();
+  }
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
   }
 }

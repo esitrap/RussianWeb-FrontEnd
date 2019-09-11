@@ -10,7 +10,7 @@ import { usersManager } from '../usersManager';
 export class CreateuserComponent implements OnInit {
 
   constructor(private userService: UsersService) { }
-  
+
   users: usersManager[]
   username: string;
   password: string;
@@ -18,7 +18,7 @@ export class CreateuserComponent implements OnInit {
   ngOnInit() {
 
   }
-    add() {
+  add() {
 
     this.userService.addUsers({
       id: null,
@@ -29,5 +29,10 @@ export class CreateuserComponent implements OnInit {
         this.userCreated.emit();
       }
     );
+  }
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
   }
 }

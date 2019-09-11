@@ -17,7 +17,7 @@
             <td>{{post.onvan}}</td>
             <td>
                 <button pButton icon="fa-search" (click)="setForm(post)"></button>
-            </td> 
+            </td>
             <td>
                 <button pButton icon="fa-search" (click)="deletePosts(post)"></button>
             </td>
@@ -25,5 +25,6 @@
     </ng-template>
 </p-table>
 <app-create-post (postCreated)="getPosts()"></app-create-post>
-<app-edit-post [item]="selected" *ngIf="selected" (postEdited)="getPosts()" ></app-edit-post>
-
+<p-dialog header="ویرایش پست" [(visible)]="display">
+    <app-edit-post [item]="selected" *ngIf="selected" (postEdited)="getPosts()"></app-edit-post>
+</p-dialog>

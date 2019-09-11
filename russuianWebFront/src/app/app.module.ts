@@ -10,15 +10,15 @@ import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http'
 import { UsersService } from './managerPanel/users/users.service';
 import { ButtonModule } from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import {PasswordModule} from 'primeng/password';
+import { PasswordModule } from 'primeng/password';
 import { CreatePostComponent } from './managerPanel/postsManager/posts/create-post/create-post.component';
 import { CreateuserComponent } from './managerPanel/users/createuser/createuser.component';
 import { EditPostComponent } from './managerPanel/postsManager/posts/edit-post/edit-post.component';
 import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.component';
-
-
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.comp
     CreateuserComponent,
     EditPostComponent,
     EditUserComponent,
+
 
   ],
   imports: [
@@ -41,6 +42,8 @@ import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.comp
     InputTextModule,
     FormsModule,
     PasswordModule,
+    DialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [PostsService, UsersService],
   bootstrap: [AppComponent]

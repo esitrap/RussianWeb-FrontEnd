@@ -10,7 +10,7 @@ import { postManager } from '../../Post';
 export class EditPostComponent implements OnInit {
   @Input() item: postManager;
   @Output() postEdited = new EventEmitter();
-
+  
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
