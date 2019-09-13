@@ -1,20 +1,26 @@
 <p-dialog header="ایجاد پست جدید" [(visible)]="display">
-    <div>
-        <label>متن کامل:
-            <input type="text" pInputText [(ngModel)]="matneKamelePost" />
-        </label>
-        <label>خلاصه پست:
-            <input type="text" pInputText [(ngModel)]="kholaseyePost" />
-        </label>
-        <label>تاریخ انتشار:
-            <input type="date" pInputText [(ngModel)]="tarikheEnteshar" />
-        </label>
-        <label>عنوان:
-            <input type="text" pInputText [(ngModel)]="onvan" />
-        </label>
-        <button pButton type="button" class="ui-button-raised ui-button-rounded" label="ایجاد" (click)="add()"></button>
+    <div class="ui-g">
+        <div class="ui-g-12"> <label>عنوان:
+                <input type="text" pInputText [(ngModel)]="onvan" />
+            </label>
+        </div>
+        <div class="ui-g-12"> <label>خلاصه پست:
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"
+                    [(ngModel)]="kholaseyePost"></textarea>
+            </label>
+        </div>
+        <div class="ui-g-12"> <label>متن کامل:
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"
+                    [(ngModel)]="matneKamelePost"></textarea>
+            </label>
+        </div>
+        <div class="ui-g-12"> <label>تاریخ انتشار:
+                <input type="date" pInputText [(ngModel)]="tarikheEnteshar" />
+            </label>
+        </div>
     </div>
+    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="ایجاد" (click)="add()"></button>
+
 </p-dialog>
 
 <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="ایجاد پست جدید"></button>
-

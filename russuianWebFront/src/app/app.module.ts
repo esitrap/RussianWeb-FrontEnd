@@ -19,6 +19,14 @@ import { EditPostComponent } from './managerPanel/postsManager/posts/edit-post/e
 import { EditUserComponent } from './managerPanel/users/edit-user/edit-user.component';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManagerPlanRoutingModule } from './managerPanel/manager-plan-routing.module';
+import { DashboardComponent } from './managerPanel/dashboard/dashboard.component';
+import { PostViewComponent } from './post-view/post-view.component';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { EditorModule } from 'primeng/editor';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CreateuserComponent,
     EditPostComponent,
     EditUserComponent,
-
+    DashboardComponent,
+    PostViewComponent,
 
   ],
   imports: [
@@ -44,8 +53,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PasswordModule,
     DialogModule,
     BrowserAnimationsModule,
+    ManagerPlanRoutingModule,
+    MenubarModule,
+    InputTextareaModule,
+    EditorModule,
+    ConfirmDialogModule,
+
   ],
-  providers: [PostsService, UsersService],
+  providers: [PostsService, UsersService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,14 @@
                 <button pButton icon="fa-search" (click)="setForm(user)"></button>
             </td>
             <td>
-                <button pButton icon="fa-search" (click)="deleteUser(user)"></button>
+                <button pButton icon="fa-search" (click)="confirm()">
+                        <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
+                                <p-footer>
+                                    <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
+                                    <button type="button" pButton icon="pi pi-check" label="بلی" (click)="deleteUser(user)"></button>
+                                </p-footer>
+                            </p-confirmDialog>
+                </button>
             </td>
         </tr>
     </ng-template>

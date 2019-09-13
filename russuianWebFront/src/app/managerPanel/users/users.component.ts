@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { usersManager } from './usersManager';
 import { UsersService } from './users.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +13,10 @@ import { UsersService } from './users.service';
 export class UsersComponent implements OnInit {
   users: usersManager[]
   selected: usersManager;
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService,
+    private location: Location,
+    private route: ActivatedRoute,
+    private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -20,6 +25,14 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
   }
+  confirm() {
+    this.confirmationService.confirm({
+        message: 'از انجام عملیات درخواستی مطمئن هستید؟',
+        accept: () => {
+        
+        }
+    });
+}
   deleteUser(user: usersManager) {
     this.userService.deleteUser(user)
       .subscribe(x => {

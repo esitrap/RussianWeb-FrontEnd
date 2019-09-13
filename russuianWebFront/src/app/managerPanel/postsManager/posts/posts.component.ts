@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/posts.service';
 import { postManager } from '../Post';
-
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ConfirmationService } from 'primeng/api';
 
 
 
@@ -16,7 +18,9 @@ export class PostsComponent implements OnInit {
 
   selected: postManager;
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService,
+    private location: Location,
+    private route: ActivatedRoute,private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.getPosts();
@@ -24,6 +28,14 @@ export class PostsComponent implements OnInit {
   getPosts(): void {
     this.postsService.getPosts()
       .subscribe(posts => this.posts = posts)
+  }
+  confirm() {
+    this.confirmationService.confirm({
+        message: 'از انجام عملیات درخواستی مطمئن هستید؟',
+        accept: () => {
+        
+        }
+    });
   }
   deletePosts(post: postManager) {
     this.postsService.deletePosts(post)

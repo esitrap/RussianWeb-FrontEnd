@@ -1,8 +1,17 @@
 <div class="ui-rtl" dir="rtl">
-    <h1>پنل مدیریت</h1>
-    <h1>مدیریت پست ها</h1>
-    <app-postsManager></app-postsManager>
-    <h2>مدیریت کاربران</h2>
-    <app-users></app-users>
-    <router-outlet></router-outlet>
+  <p-menubar [model]="items">
+    <input type="text" pInputText placeholder="جستجو">
+    <button pButton label="خروج" icon="fa fa-sign-out"></button>
+    <nav>
+      <a routerLink="/posts"> پست</a>
+    </nav>
+
+    <nav>
+      <a routerLink="/users">کاربران</a>
+    </nav>
+    <!-- <nav>
+      <a routerLink="/managerPanel">پنل مدیریت</a>
+    </nav> -->
+  </p-menubar>
+  <router-outlet></router-outlet>
 </div>
