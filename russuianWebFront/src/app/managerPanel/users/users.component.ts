@@ -29,7 +29,9 @@ export class UsersComponent implements OnInit {
     this.confirmationService.confirm({
         message: 'از انجام عملیات درخواستی مطمئن هستید؟',
         accept: () => {
-        
+        },
+        reject: () => {
+
         }
     });
 }

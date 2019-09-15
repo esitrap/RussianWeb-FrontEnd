@@ -18,9 +18,10 @@ export class PostsComponent implements OnInit {
 
   selected: postManager;
 
+
   constructor(private postsService: PostsService,
     private location: Location,
-    private route: ActivatedRoute,private confirmationService: ConfirmationService) { }
+    private route: ActivatedRoute, private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.getPosts();
@@ -31,10 +32,12 @@ export class PostsComponent implements OnInit {
   }
   confirm() {
     this.confirmationService.confirm({
-        message: 'از انجام عملیات درخواستی مطمئن هستید؟',
-        accept: () => {
-        
-        }
+      message: 'از انجام عملیات درخواستی مطمئن هستید؟',
+      accept: () => {
+      },
+    reject: () => {
+
+    }
     });
   }
   deletePosts(post: postManager) {
