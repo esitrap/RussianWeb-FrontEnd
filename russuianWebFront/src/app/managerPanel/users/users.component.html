@@ -3,8 +3,7 @@
         <tr>
             <th>نام کاربری</th>
             <th>رمز عبور</th>
-            <th style="width:4em">ویرایش</th>
-            <th style="width:4em">حذف</th>
+            <th>عملیات</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-user>
@@ -12,17 +11,18 @@
             <td>{{user.userName}}</td>
             <td>{{user.password}}</td>
             <td>
-                <button pButton icon="fa-search" (click)="setForm(user)"></button>
+                <div class="ui-g ui-fluid">
+                    <button pButton icon="fa-search" (click)="setForm(user)">ویرایش</button>
+                    <button pButton icon="fa-search" (click)="confirm(user)">حذف</button>
+                </div>
             </td>
             <td>
-                <button pButton icon="fa-search" (click)="confirm()">
-                        <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
-                                <p-footer>
-                                    <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
-                                    <button type="button" pButton icon="pi pi-check" label="بلی" (click)="deleteUser(user)"></button>
-                                </p-footer>
-                            </p-confirmDialog>
-                </button>
+                <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
+                    <p-footer>
+                        <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
+                        <button type="button" pButton icon="pi pi-check" label="بلی" (click)="cd.accept()"></button>
+                    </p-footer>
+                </p-confirmDialog>
             </td>
         </tr>
     </ng-template>

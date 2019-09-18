@@ -25,11 +25,14 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
   }
-  confirm() {
+  confirm(user:usersManager) {
     this.confirmationService.confirm({
         message: 'از انجام عملیات درخواستی مطمئن هستید؟',
         accept: () => {
-        
+          this.deleteUser(user);
+        },
+        reject: () => {
+            
         }
     });
 }
