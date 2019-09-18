@@ -11,26 +11,22 @@
             <td>{{user.userName}}</td>
             <td>{{user.password}}</td>
             <td>
-                <div class="ui-g ui-fluid">
-                    <button pButton icon="fa-search" (click)="setForm(user)">ویرایش</button>
-                    <button pButton icon="fa-search" (click)="confirm(user)">حذف</button>
-                </div>
-            </td>
-            <td>
-                <button pButton icon="fa-search" (click)="confirm()">
-                        <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
-                                <p-footer>
-                                    <button type="button" pButton icon="pi pi-times" label="خیر" (click)="getUsers()"></button>
-                                    <button type="button" pButton icon="pi pi-check" label="بلی" (click)="deleteUser(user)"></button>
-                                </p-footer>
-                            </p-confirmDialog>
-                </button>
+                <button pButton icon="fa-search" (click)="setForm(user)">ویرایش</button>
+                <button pButton icon="fa-search" (click)="confirm(user)">حذف</button>
             </td>
         </tr>
+            <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
+                <p-footer>
+                    <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
+                    <button type="button" pButton icon="pi pi-check" label="بلی" (click)="cd.accept()"></button>
+                </p-footer>
+            </p-confirmDialog>
+
+
     </ng-template>
 </p-table>
-<app-createuser (userCreated)="getUsers()"></app-createuser>
 
+<app-createuser (userCreated)="getUsers()"></app-createuser>
 <p-dialog header="ویرایش کاربر" [(visible)]="display">
     <app-edit-user [item]="selected" *ngIf="selected" (userEdited)="getUsers()"></app-edit-user>
 </p-dialog>
