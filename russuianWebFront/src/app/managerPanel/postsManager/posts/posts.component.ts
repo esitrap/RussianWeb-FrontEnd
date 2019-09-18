@@ -18,6 +18,7 @@ export class PostsComponent implements OnInit {
 
   selected: postManager;
 
+
   constructor(private postsService: PostsService,
     private location: Location,
     private route: ActivatedRoute, private confirmationService: ConfirmationService) { }
