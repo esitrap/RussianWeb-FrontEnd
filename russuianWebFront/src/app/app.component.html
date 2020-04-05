@@ -1,7 +1,11 @@
 <div class="ui-rtl" dir="rtl">
   <p-menubar [model]="items">
     <input type="text" pInputText placeholder="جستجو">
-    <button pButton label="خروج" icon="fa fa-sign-out"></button>
+    <button pButton label="خروج" icon="fa fa-sign-out" onclick="window.location.href='index.html'"></button>
+    <nav>
+      <a routerLink="/home">خانه</a>
+    </nav>
+
     <nav>
       <a routerLink="/posts"> پست</a>
     </nav>
