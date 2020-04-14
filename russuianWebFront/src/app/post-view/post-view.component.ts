@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { PostsService } from '../posts.service';
+import { postviwer } from './Post';
 
 @Component({
   selector: 'app-post-view',
@@ -9,12 +11,16 @@ import { MenuItem } from 'primeng/api';
 export class PostViewComponent implements OnInit {
 
   items: MenuItem[];
-  
-  constructor() { }
+  posts: postviwer[];
+  selected: postviwer;
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    this.items = [{label: 'پنل مدیریت', icon: 'pi pi-fw pi-times'}
-  ]
+    this.getPostsforviwe();
   }
-
+  getPostsforviwe(): void {
+    this.postsService.getPostsforviwe()
+      .subscribe(posts => this.posts = posts)
+  }
 }

@@ -27,7 +27,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { EditorModule } from 'primeng/editor';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
-
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ import { ConfirmationService } from 'primeng/api';
     InputTextareaModule,
     EditorModule,
     ConfirmDialogModule,
-
+    CardModule,
   ],
   providers: [PostsService, UsersService, ConfirmationService],
   bootstrap: [AppComponent]
