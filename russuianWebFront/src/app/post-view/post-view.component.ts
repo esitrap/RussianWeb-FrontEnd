@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { PostsService } from '../posts.service';
 import { postviwer } from './Post';
 
@@ -9,8 +8,7 @@ import { postviwer } from './Post';
   styleUrls: ['./post-view.component.css']
 })
 export class PostViewComponent implements OnInit {
-
-  items: MenuItem[];
+  
   posts: postviwer[];
   selected: postviwer;
 

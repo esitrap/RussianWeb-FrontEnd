@@ -28,6 +28,12 @@ import { EditorModule } from 'primeng/editor';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import {CardModule} from 'primeng/card';
+import { LoginpageComponent } from './managerPanel/loginpage/loginpage.component';
+import {ToastModule} from 'primeng/toast';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {PanelModule} from 'primeng/panel';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,7 @@ import {CardModule} from 'primeng/card';
     EditUserComponent,
     DashboardComponent,
     PostViewComponent,
+    LoginpageComponent,
 
   ],
   imports: [
@@ -60,6 +67,11 @@ import {CardModule} from 'primeng/card';
     EditorModule,
     ConfirmDialogModule,
     CardModule,
+    ToastModule,
+    MessagesModule,
+    MessageModule,
+    PanelModule,
+    DropdownModule,
   ],
   providers: [PostsService, UsersService, ConfirmationService],
   bootstrap: [AppComponent]

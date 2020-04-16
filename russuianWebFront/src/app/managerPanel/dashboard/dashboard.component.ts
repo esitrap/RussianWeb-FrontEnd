@@ -1,24 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { postManager } from '../postsManager/Post';
-import { PostsService } from 'src/app/posts.service';
-import { usersManager } from '../users/usersManager';
-import { UsersService } from '../users/users.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { MenuItem } from 'primeng/api';
+//import { items } from '../../app.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+//let myValidator = new items();
 export class DashboardComponent implements OnInit {
 
+  //@Input() item: MenuItem;
+  items: MenuItem[];
 
-  constructor(private postsService: PostsService, private userService: UsersService,
-    private location: Location,
-    private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
 
+
+     this.items = [
+       {
+         label: 'پست',
+         icon: 'pi pi-envelope', routerLink: ['/posts'],
+         visible: true
+       },
+       {
+         label: 'کاربران',
+         icon: 'pi pi-user-edit', routerLink: ['/users'],
+         visible: true
+       },
+       { separator: true },
+       {
+         label: 'خروج', icon: 'pi pi-times', routerLink: ['/home'],
+         visible: true
+       }
+     ]
+  }
 }

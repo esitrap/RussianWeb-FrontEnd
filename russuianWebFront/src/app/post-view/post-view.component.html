@@ -1,26 +1,24 @@
-<div class="p-grid sample-layout">
-    <div class="p-col-12 p-md-2">
-        Menu
-    <ul>
-      <li>خانه</li>
-      <li> اطلاعات گردشگری</li>
-      <li>قیمت ارز</li>
-    </ul>
-  </div>
+<div class="p-col-12 p-md-2">
+  Menu
+  <ul>
+    <li>خانه</li>
+    <li> اطلاعات گردشگری</li>
+    <li>قیمت ارز</li>
+  </ul>
+  <br>
 </div>
-
+<div class="p-grid">
     <p-card header="{{post.onvan}}" [style]="{width: '360px'}" styleClass="ui-card-shadow" *ngFor="let post of posts">
       <p-header>
-          <img src="Card" src="assets/showcase/images/galleria/1D9D438D-DBB1-4B98-8395-CCEF1B47FE43.jpg">
+        <img src="Card" src="assets/showcase/images/galleria/1D9D438D-DBB1-4B98-8395-CCEF1B47FE43.jpg">
       </p-header>
       <div>{{post.kholaseyePost}}</div>
       <p-footer>
-          <button pButton type="button" label="بیشتر" class="ui-button-secondary" style="margin-right: .25em"></button>
+        <button pButton type="button" label="بیشتر" class="ui-button-secondary" style="margin-right: 19em"></button>
       </p-footer>
-  </p-card>
-           
-            <div class="p-col-12">
-              Footer
-          </div>
+    </p-card>
+  </div>
 
-
+<div class="p-col-12">
+  Footer
+</div>
