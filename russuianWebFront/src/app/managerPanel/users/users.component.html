@@ -11,16 +11,17 @@
             <td>{{user.userName}}</td>
             <td>{{user.password}}</td>
             <td>
-                <button pButton icon="fa-search" (click)="setForm(user)">ویرایش</button>
-                <button pButton icon="fa-search" (click)="confirm(user)">حذف</button>
+                <button pButton type="button" icon="pi pi-user-edit" (click)="setForm(user)">ویرایش</button>
+                <button pButton type="button" icon="pi pi-user-minus" (click)="confirm(user)"
+                    class="ui-button-danger">حذف</button>
             </td>
         </tr>
-            <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
-                <p-footer>
-                    <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
-                    <button type="button" pButton icon="pi pi-save" label="بلی" (click)="cd.accept()"></button>
-                </p-footer>
-            </p-confirmDialog>
+        <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
+            <p-footer>
+                <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
+                <button type="button" pButton icon="pi pi-save" label="بلی" (click)="cd.accept()"></button>
+            </p-footer>
+        </p-confirmDialog>
 
 
     </ng-template>

@@ -34,6 +34,9 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {PanelModule} from 'primeng/panel';
 import {DropdownModule} from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValidationpageComponent } from './managerPanel/validationpage/validationpage.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import {DropdownModule} from 'primeng/dropdown';
     DashboardComponent,
     PostViewComponent,
     LoginpageComponent,
+    ValidationpageComponent,
 
   ],
   imports: [
@@ -72,6 +76,7 @@ import {DropdownModule} from 'primeng/dropdown';
     MessageModule,
     PanelModule,
     DropdownModule,
+    ReactiveFormsModule
   ],
   providers: [PostsService, UsersService, ConfirmationService],
   bootstrap: [AppComponent]

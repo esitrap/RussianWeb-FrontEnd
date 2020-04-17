@@ -15,19 +15,22 @@
             <td>{{post.tarikheEnteshar}}</td>
             <td>{{post.onvan}}</td>
             <td>
-                <button pButton icon="fa-search" (click)="setForm(post)">ویرایش</button>
-                <button pButton icon="fa-search" (click)="confirm(post)">حذف</button>
+                <button pButton type="button" icon="pi pi-pencil" (click)="setForm(post)">ویرایش</button>
+                <button pButton type="button" icon="pi pi-times" (click)="confirm(post)"
+                    class="ui-button-danger">حذف</button>
             </td>
         </tr>
-                <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
-                        <p-footer>
-                            <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
-                            <button type="button" pButton icon="pi pi-save" label="بلی" (click)="cd.accept()"></button>
-                        </p-footer>
-                    </p-confirmDialog>
+        <p-confirmDialog #cd header="تایید عملیات" icon="pi pi-exclamation-triangle">
+            <p-footer>
+                <button type="button" pButton icon="pi pi-times" label="خیر" (click)="cd.reject()"></button>
+                <button type="button" pButton icon="pi pi-save" label="بلی" (click)="cd.accept()"></button>
+            </p-footer>
+        </p-confirmDialog>
+
+        
     </ng-template>
 </p-table>
-   
+
 <app-create-post (postCreated)="getPosts()"></app-create-post>
 <p-dialog header="ویرایش پست" [(visible)]="display">
     <app-edit-post [item]="selected" *ngIf="selected" (postEdited)="getPosts()"></app-edit-post>

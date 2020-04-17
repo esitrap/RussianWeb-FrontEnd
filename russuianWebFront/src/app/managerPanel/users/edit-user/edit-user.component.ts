@@ -11,6 +11,7 @@ export class EditUserComponent implements OnInit {
 
   @Input() item: usersManager;
   @Output() userEdited = new EventEmitter();
+  
   constructor(private userService: UsersService) { }
 
   ngOnInit() {

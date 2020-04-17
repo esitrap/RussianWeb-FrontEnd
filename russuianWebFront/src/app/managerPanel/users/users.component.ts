@@ -3,7 +3,7 @@ import { usersManager } from './usersManager';
 import { UsersService } from './users.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import {ConfirmationService} from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-users',
@@ -25,17 +25,17 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
   }
-  confirm(user:usersManager) {
+  confirm(user: usersManager) {
     this.confirmationService.confirm({
-        message: 'از انجام عملیات درخواستی مطمئن هستید؟',
-        accept: () => {
-          this.deleteUser(user);
-        },
-        reject: () => {
-            
-        }
+      message: 'از انجام عملیات درخواستی مطمئن هستید؟',
+      accept: () => {
+        this.deleteUser(user);
+      },
+      reject: () => {
+
+      }
     });
-}
+  }
   deleteUser(user: usersManager) {
     this.userService.deleteUser(user)
       .subscribe(x => {
@@ -43,7 +43,7 @@ export class UsersComponent implements OnInit {
       })
   }
   setForm(user: usersManager): void {
-    this.selected =Object.assign({},user);
+    this.selected = Object.assign({}, user);
     this.showDialog();
   }
   display: boolean = false;

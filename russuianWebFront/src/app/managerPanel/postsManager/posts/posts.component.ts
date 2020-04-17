@@ -13,15 +13,12 @@ import { ConfirmationService } from 'primeng/api';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-
   posts: postManager[]
-
   selected: postManager;
-
-
   constructor(private postsService: PostsService,
     private location: Location,
-    private route: ActivatedRoute, private confirmationService: ConfirmationService) { }
+    private route: ActivatedRoute, 
+    private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.getPosts();
@@ -32,10 +29,9 @@ export class PostsComponent implements OnInit {
   }
   confirm(post: postManager) {
     this.confirmationService.confirm({
-
       message: 'از انجام عملیات درخواستی مطمئن هستید؟',
       accept: () => {
-      this.deletePosts(post);
+        this.deletePosts(post);
       },
       reject: () => {
 

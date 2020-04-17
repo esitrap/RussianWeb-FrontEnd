@@ -1,76 +1,51 @@
-
 <p-toast [style]="{marginTop: '80px'}"></p-toast>
 
 <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
-    <p-panel header="Validate">
+    <p-panel header="ورود کاربر">
         <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2">
-                    First Name *:
+                    نام کاربری *:
                 </div>
                 <div class="ui-grid-col-6">
-                    <input pInputText type="text" formControlName="firstname" placeholder="Required"/>
+                    <input pInputText type="text" formControlName="username" />
                 </div>
                 <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
+                    <p-message severity="error" text="نام کاربری ضروری است"
+                        *ngIf="!userform.controls['username'].valid&&userform.controls['username'].dirty"></p-message>
                 </div>
             </div>
+
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2">
-                    Last Name *:
+                    کلمه عبور *:
                 </div>
                 <div class="ui-grid-col-6">
-                    <input pInputText type="text" formControlName="lastname" placeholder="Required"/>
+                    <input pInputText type="password" formControlName="password" placeholder="1234" />
                 </div>
                 <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Lastname is required" *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty"></p-message>
-                </div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Password *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <input pInputText type="password" formControlName="password" placeholder="Required - Min(6)"/>
-                </div>
-                <div class="ui-grid-col-4">
-                <p-message severity="error" [text]="userform.controls['password'].errors['required'] ? 'Password is required' : userform.controls['password'].errors['minlength'] ? 'Must be longer than 6 characters' : ''" 
+                    <p-message severity="error"
+                        [text]="userform.controls['password'].errors['required'] ? 'کلمه ی عبور ضروری است' : userform.controls['password'].errors['minlength'] ? 'رمز عبور نباید از 4 کاراکتر کمتر باشد' : ''"
                         *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
                 </div>
             </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Description:
-                </div>
-                <div class="ui-grid-col-6">
-                    <textarea pInputTextarea type="text" formControlName="description"></textarea>
-                </div>
-                <div class="ui-grid-col-4"></div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Gender *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <p-dropdown [options]="genders" formControlName="gender"></p-dropdown>
-                </div>
-                <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Gender is required" *ngIf="!userform.controls['gender'].valid&&userform.controls['gender'].dirty"></p-message>
-                </div>
-            </div>
+
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2"></div>
                 <div class="ui-grid-col-6">
-                    <button pButton type="submit" label="Submit" [disabled]="!userform.valid"></button>
+                    <button pButton type="submit" label="ورود" [disabled]="!userform.valid" onclick="window.location = './dashboard'"></button>
                 </div>
                 <div class="ui-grid-col-4"></div>
             </div>
-            <div style="text-align:center;margin-top:20px" *ngIf="submitted">
-                Form Submitted
-                <br>
-                {{diagnostic}}
-            </div>
+
+            <!-- <div class="ui-grid-row">
+                <div class="ui-grid-col-2"></div>
+                <div class="ui-grid-col-6">
+                    <button pButton type="register" label="ثبت نام" onclick="window.location = './validationpage'"></button>
+                    <a></a>
+                </div>
+                <div class="ui-grid-col-4"></div>
+            </div> -->
         </div>
     </p-panel>
 </form>
-
