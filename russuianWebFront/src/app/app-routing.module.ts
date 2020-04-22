@@ -12,7 +12,7 @@ const routes: Routes = [{ path: 'posts', component: PostsComponent },
 { path: 'managerpanel', component: LoginpageComponent },
 { path: 'home', component: PostViewComponent },
 { path: 'validationpage', component: ValidationpageComponent },
-{ path: 'dashboard', component: DashboardComponent },
+// { path: 'dashboard', component: DashboardComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
