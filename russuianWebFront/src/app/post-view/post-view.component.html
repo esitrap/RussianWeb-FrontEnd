@@ -7,17 +7,19 @@
   </ul>
   <br>
 </div>
-<div class="p-grid" >
-    <p-card class="p-col" header="{{post.onvan}}" [style]="{width: '360px'}" styleClass="ui-card-shadow" *ngFor="let post of posts">
+<div class="p-grid">
+  <div class="p-col-12 p-sm-12 p-md-6 p-lg-3" *ngFor="let post of posts" >
+    <p-card  header="{{post.onvan}}"  styleClass="ui-card-shadow">
       <p-header>
         <img src="Card" src="assets/showcase/images/galleria/1D9D438D-DBB1-4B98-8395-CCEF1B47FE43.jpg">
       </p-header>
       <div>{{post.kholaseyePost}}</div>
       <p-footer>
-        <button pButton type="button" label="بیشتر" class="ui-button-secondary" style="margin-right: 19em"></button>
+        <button pButton type="button" label="بیشتر" class="ui-button-secondary" style="margin-right: 18em"></button>
       </p-footer>
     </p-card>
   </div>
+</div>
 
 <div class="p-col-12">
   Footer
