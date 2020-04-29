@@ -9,10 +9,10 @@ import {ValidationpageComponent} from './managerPanel/validationpage/validationp
 
 const routes: Routes = [{ path: 'posts', component: PostsComponent },
 { path: 'users', component: UsersComponent },
-{ path: 'managerPanel', component: LoginpageComponent },
+{ path: 'managerpanel', component: LoginpageComponent },
 { path: 'home', component: PostViewComponent },
 { path: 'validationpage', component: ValidationpageComponent },
-{ path: 'dashboard', component: DashboardComponent },
+// { path: 'dashboard', component: DashboardComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
