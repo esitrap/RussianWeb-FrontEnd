@@ -33,7 +33,8 @@
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2"></div>
                 <div class="ui-grid-col-6">
-                    <button pButton type="submit" label="ورود" [disabled]="!userform.valid" onclick="window.location = './dashboard'"></button>
+                    <button pButton type="submit" label="ورود" [disabled]="!userform.valid"
+                        (click)="gotomanager()"></button>
                 </div>
                 <div class="ui-grid-col-4"></div>
             </div>

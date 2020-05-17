@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 import {MessageService} from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginpage',
@@ -15,7 +16,7 @@ export class LoginpageComponent implements OnInit {
   submitted: boolean;
 
 
-  constructor(private fb: FormBuilder, private messageService: MessageService) { }
+  constructor(private fb: FormBuilder, private messageService: MessageService,private router: Router) { }
 
   ngOnInit() {
 
@@ -34,5 +35,10 @@ export class LoginpageComponent implements OnInit {
 }
 
 get diagnostic() { return JSON.stringify(this.userform.value); }
+
+gotomanager(){
+
+  this.router.navigate(['./dashboard']);
+}
 
 }
