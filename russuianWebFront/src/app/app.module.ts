@@ -36,6 +36,8 @@ import {PanelModule} from 'primeng/panel';
 import {DropdownModule} from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationpageComponent } from './managerPanel/validationpage/validationpage.component';
+import { AuthGuard } from './auth-guard.service';
+import { Auth } from 'src/auth.service';
 
 
 @NgModule({
@@ -78,7 +80,7 @@ import { ValidationpageComponent } from './managerPanel/validationpage/validatio
     DropdownModule,
     ReactiveFormsModule
   ],
-  providers: [PostsService, UsersService, ConfirmationService],
+  providers: [PostsService, UsersService, ConfirmationService, AuthGuard, Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
