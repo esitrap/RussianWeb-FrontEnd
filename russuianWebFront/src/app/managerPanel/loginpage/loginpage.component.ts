@@ -37,16 +37,13 @@ export class LoginpageComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.userform.value); }
 
-  gotomanager() {
+  // gotomanager() {
 
-    this.router.navigate(['./dashboard']);
-  }
+  //   this.router.navigate(['./dashboard']);
+  // }
   onLogIn() {
     this.authService.logIn();
     this.router.navigate(['./dashboard']);
   }
 
-  onLogOut() {
-    this.authService.logOut();
-  }
 }
