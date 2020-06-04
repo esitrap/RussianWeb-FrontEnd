@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
       },
       {
         label: 'بازگشت',
-        icon: 'pi pi-step-backward', routerLink: ['/dashboard'],
+        icon: 'pi pi-step-backward', routerLink: ['/managerpanel'],
         visible: true
       },
       { separator: true },
