@@ -27,18 +27,18 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { EditorModule } from 'primeng/editor';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 import { LoginpageComponent } from './managerPanel/loginpage/loginpage.component';
-import {ToastModule} from 'primeng/toast';
-import {MessagesModule} from 'primeng/messages';
-import {MessageModule} from 'primeng/message';
-import {PanelModule} from 'primeng/panel';
-import {DropdownModule} from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { PanelModule } from 'primeng/panel';
+import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationpageComponent } from './managerPanel/validationpage/validationpage.component';
 import { AuthGuard } from './auth-guard.service';
 import { Auth } from 'src/auth.service';
-
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -78,7 +78,8 @@ import { Auth } from 'src/auth.service';
     MessageModule,
     PanelModule,
     DropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OAuthModule.forRoot()
   ],
   providers: [PostsService, UsersService, ConfirmationService, AuthGuard, Auth],
   bootstrap: [AppComponent]
