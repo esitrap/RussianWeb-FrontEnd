@@ -15,6 +15,7 @@ export class CreatePostComponent implements OnInit {
   tarikheEnteshar: Date;
   kholaseyePost: string;
   matneKamelePost: string;
+  ax: string;
   @Output() postCreated = new EventEmitter();
 
   constructor(private postsService: PostsService) { }
@@ -28,7 +29,8 @@ export class CreatePostComponent implements OnInit {
       onvan: this.onvan,
       tarikheEnteshar: this.tarikheEnteshar,
       kholaseyePost: this.kholaseyePost,
-      matneKamelePost: this.matneKamelePost
+      matneKamelePost: this.matneKamelePost,
+      ax:this.ax
     }).subscribe(
       post => {
         this.postCreated.emit();

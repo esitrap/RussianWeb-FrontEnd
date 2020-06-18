@@ -3,4 +3,5 @@ export class postManager {
     tarikheEnteshar : Date;
     kholaseyePost : string;
     matneKamelePost : string;
+    ax : string;
 }

@@ -5,6 +5,7 @@
             <th>خلاصه پست</th>
             <th>تاریخ انتشار</th>
             <th>عنوان</th>
+            <th>تصویر</th>
             <th>عملیات</th>
         </tr>
     </ng-template>
@@ -14,6 +15,7 @@
             <td>{{post.kholaseyePost}}</td>
             <td>{{post.tarikheEnteshar}}</td>
             <td>{{post.onvan}}</td>
+            <td>{{post.ax}}</td>
             <td>
                 <button pButton type="button" icon="pi pi-pencil" (click)="setForm(post)">ویرایش</button>
                 <button pButton type="button" icon="pi pi-times" (click)="confirm(post)"

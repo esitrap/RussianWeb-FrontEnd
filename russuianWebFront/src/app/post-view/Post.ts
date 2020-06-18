@@ -3,4 +3,5 @@ export class postviwer {
     tarikheEnteshar : Date;
     kholaseyePost : string;
     matneKamelePost : string;
+    ax : string;
 }

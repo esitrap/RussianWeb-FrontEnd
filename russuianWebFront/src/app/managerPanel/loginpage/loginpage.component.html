@@ -42,7 +42,8 @@
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2"></div>
                 <div class="ui-grid-col-6">
-                    <button pButton type="register" label="ثبت نام" onclick="window.location = './validationpage'"></button>
+                                      <button pButton type="submit" label="ورود" [disabled]="!userform.valid"
+                        (click)="onLogIn()"></button>
                     <a></a>
                 </div>
                 <div class="ui-grid-col-4"></div>

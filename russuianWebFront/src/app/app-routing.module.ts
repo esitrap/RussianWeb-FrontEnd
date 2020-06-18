@@ -7,6 +7,7 @@ import { PostViewComponent } from './post-view/post-view.component';
 import {LoginpageComponent} from './managerPanel/loginpage/loginpage.component'
 import {ValidationpageComponent} from './managerPanel/validationpage/validationpage.component'
 import { AuthGuard } from './auth-guard.service';
+import { PostViewDetailComponent } from './post-view-detail/post-view-detail.component';
 
 
 const routes: Routes = [{ path: 'posts', component: PostsComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [{ path: 'posts', component: PostsComponent },
 { path: 'home', component: PostViewComponent },
 { path: 'validationpage', component: ValidationpageComponent },
 { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard] },
+{ path: 'postviewdetail', component: PostViewDetailComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

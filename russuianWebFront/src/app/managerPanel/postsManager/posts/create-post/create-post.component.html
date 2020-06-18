@@ -18,6 +18,11 @@
                 <input type="date" pInputText [(ngModel)]="tarikheEnteshar" />
             </label>
         </div>
+        <div class="ui-g-12"> <label>تصویر:
+            <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
+        accept="image/*" [auto]="true"></p-fileUpload>
+        </label>
+    </div>
     </div>
     <br>
     <button pButton type="button" class="ui-button-raised ui-button-rounded" label="ایجاد" (click)="add()"></button>

@@ -39,6 +39,8 @@ import { ValidationpageComponent } from './managerPanel/validationpage/validatio
 import { AuthGuard } from './auth-guard.service';
 import { Auth } from 'src/auth.service';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { PostViewDetailComponent } from './post-view-detail/post-view-detail.component';
+import {FileUploadModule} from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     PostViewComponent,
     LoginpageComponent,
     ValidationpageComponent,
+    PostViewDetailComponent,
 
   ],
   imports: [
@@ -79,7 +82,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     PanelModule,
     DropdownModule,
     ReactiveFormsModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    FileUploadModule
   ],
   providers: [PostsService, UsersService, ConfirmationService, AuthGuard, Auth],
   bootstrap: [AppComponent]
