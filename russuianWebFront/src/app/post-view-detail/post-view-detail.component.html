@@ -1,1 +1,9 @@
-<p>post-view-detail works!</p>
+<div *ngIf="post">
+    <h2>{{post.onvan | uppercase}} Details</h2>
+    <div><span>onvan: </span>{{post.onvan}}</div>
+    <div>
+      <label>onvan:
+        <input [(ngModel)]="post.onvan" placeholder="onvan"/>
+      </label>
+    </div>
+  </div>

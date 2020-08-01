@@ -16,7 +16,7 @@ const routes: Routes = [{ path: 'posts', component: PostsComponent },
 { path: 'home', component: PostViewComponent },
 { path: 'validationpage', component: ValidationpageComponent },
 { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard] },
-{ path: 'postviewdetail', component: PostViewDetailComponent },
+{ path: 'postviewdetail/:onvan', component: PostViewDetailComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
