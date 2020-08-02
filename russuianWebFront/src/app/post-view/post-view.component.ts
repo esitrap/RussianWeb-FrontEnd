@@ -22,7 +22,7 @@ export class PostViewComponent implements OnInit {
     this.postsService.getPostsforviwe()
       .subscribe(posts => this.posts = posts)
   }
-  more() {
-    this.router.navigate(['./postviewdetail']);
+  more(post: postviwer) {
+    this.router.navigate(['./postviewdetail/'+{post.onvan}]);
 }
 }
