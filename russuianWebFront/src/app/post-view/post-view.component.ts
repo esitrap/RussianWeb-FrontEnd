@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostViewComponent implements OnInit {
   
-  posts: postviwer;
+  posts: postviwer[];
   selected: postviwer;
 
   constructor(private postsService: PostsService, private router: Router) { }
