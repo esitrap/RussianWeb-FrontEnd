@@ -13,7 +13,7 @@ import { postviwer } from './post-view/Post';
 export class PostsService {
 
   private postUrl = 'api/Posts'
-  messageService: any;
+
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +32,7 @@ export class PostsService {
     const url = `${this.postUrl}/${post.onvan}`;
     return this.http.put(url,post);
   }
-   getPostsforviwe(onvan: string): Observable<postviwer> {
-     return this.http.get<postviwer>('api/Posts')   
+   getPostsforviwe(): Observable<postviwer[]> {
+     return this.http.get<postviwer[]>('api/Posts')   
    }
 }

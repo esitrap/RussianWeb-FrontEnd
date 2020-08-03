@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { postviwer } from '../post-view/Post';
-import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../posts.service';
 
 @Component({
@@ -10,9 +9,9 @@ import { PostsService } from '../posts.service';
 })
 export class PostViewDetailComponent implements OnInit {
 
-  post: postviwer;
+  posts: postviwer[];
+  
   constructor(
-    private route: ActivatedRoute,
     private postsservice:PostsService,
     ) { }
 
@@ -20,9 +19,8 @@ export class PostViewDetailComponent implements OnInit {
     this.getPostsforviwe();
   }
   getPostsforviwe(): void {
-    const onvan = +this.route.snapshot.paramMap.get('onvan');
-    this.postsservice.getPostsforviwe(onvan)
-      .subscribe(post => this.post = post);
+    this.postsservice.getPostsforviwe()
+      .subscribe(posts => this.posts = posts)
   }
 
 }

@@ -1,9 +1,32 @@
-<div *ngIf="post">
-    <h2>{{post.onvan | uppercase}} Details</h2>
-    <div><span>onvan: </span>{{post.onvan}}</div>
-    <div>
-      <label>onvan:
-        <input [(ngModel)]="post.onvan" placeholder="onvan"/>
-      </label>
+<h3>Sample Layout</h3>
+<div class="p-grid sample-layout">
+    <div class="p-col-12 p-md-2">
+        منو
+        <ul>
+          <li>خانه</li>
+          <li> اطلاعات گردشگری</li>
+          <li>قیمت ارز</li>
+        </ul>
+        <br>
     </div>
-  </div>
+    <div class="p-col-12 p-md-10  p-col-nogutter">
+        <div class="p-col-12 p-col-nogutter">
+          [(ngModel)]="onvan"
+        </div>
+        <div class="p-col-12">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-12" >
+
+                </div>
+
+                <div class="p-col-6 p-md-3"><img src="assets/showcase/images/demo/galleria/galleria1.jpg" style="width:100%"></div>
+                <div class="p-col-6 p-md-3"><img src="assets/showcase/images/demo/galleria/galleria2.jpg" style="width:100%"></div>
+                <div class="p-col-6 p-md-3"><img src="assets/showcase/images/demo/galleria/galleria3.jpg" style="width:100%"></div>
+                <div class="p-col-6 p-md-3"><img src="assets/showcase/images/demo/galleria/galleria4.jpg" style="width:100%"></div>
+            </div>     
+        </div>
+    </div>
+    <div class="p-col-12">
+        Footer
+    </div>
+</div>
