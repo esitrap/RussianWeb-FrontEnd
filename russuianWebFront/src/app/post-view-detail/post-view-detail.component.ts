@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { postviwer } from '../post-view/Post';
+import { postviewer } from '../post-view/Post';
 import { PostsService } from '../posts.service';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-post-view-detail',
@@ -9,18 +12,20 @@ import { PostsService } from '../posts.service';
 })
 export class PostViewDetailComponent implements OnInit {
 
-  posts: postviwer[];
-  
+  post: postviewer;
+
+
   constructor(
-    private postsservice:PostsService,
-    ) { }
+    private postsservice: PostsService, private route: ActivatedRoute
+  ) { }
 
-  ngOnInit():void{
-    this.getPostsforviwe();
+  ngOnInit(): void {
+    this.getPostsByOnvan();
   }
-  getPostsforviwe(): void {
-    this.postsservice.getPostsforviwe()
-      .subscribe(posts => this.posts = posts)
-  }
+  getPostsByOnvan(): void {
+    this.route.paramMap.subscribe(paramMap => {
+      this.post.onvan = paramMap.get('onvan');
+    })
 
+  }
 }

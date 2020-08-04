@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { postManager } from './managerPanel/postsManager/Post';
-import { postviwer } from './post-view/Post';
+import { postviewer } from './post-view/Post';
 
 
 
@@ -32,7 +32,10 @@ export class PostsService {
     const url = `${this.postUrl}/${post.onvan}`;
     return this.http.put(url,post);
   }
-   getPostsforviwe(): Observable<postviwer[]> {
-     return this.http.get<postviwer[]>('api/Posts')   
+   getPostsforviwe(): Observable<postviewer[]> {
+     return this.http.get<postviewer[]>('api/Posts')   
    }
+   getPostsByOnvan(): Observable<postviewer> {
+    return this.http.get<postviewer>('api/Posts')   
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../posts.service';
-import { postviwer } from './Post';
+import { postviewer } from './Post';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class PostViewComponent implements OnInit {
   
-  posts: postviwer[];
-  selected: postviwer;
+  posts: postviewer[];
+
 
   constructor(private postsService: PostsService, private router: Router) { }
 
@@ -22,7 +22,7 @@ export class PostViewComponent implements OnInit {
     this.postsService.getPostsforviwe()
       .subscribe(posts => this.posts = posts)
   }
-  more(post: postviwer) {
+  more(post: postviewer) {
     this.router.navigate(['./postviewdetail/',post.onvan]);
 }
 }

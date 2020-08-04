@@ -1,4 +1,4 @@
-export class postviwer {
+export class postviewer {
     onvan : string;
     tarikheEnteshar : Date;
     kholaseyePost : string;
