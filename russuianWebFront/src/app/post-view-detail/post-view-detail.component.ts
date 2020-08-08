@@ -23,9 +23,9 @@ export class PostViewDetailComponent implements OnInit {
     this.getPostsByOnvan();
   }
   getPostsByOnvan(): void {
-    this.route.paramMap.subscribe(paramMap => {
-      this.post.onvan = paramMap.get('onvan');
-    })
+    const onvan = +this.route.snapshot.paramMap.get('onvan');
+    this.postsservice.getPostsByOnvan(onvan)
+      .subscribe(post => this.post = post);
+    }
 
-  }
 }

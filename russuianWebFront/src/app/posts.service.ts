@@ -35,7 +35,7 @@ export class PostsService {
    getPostsforviwe(): Observable<postviewer[]> {
      return this.http.get<postviewer[]>('api/Posts')   
    }
-   getPostsByOnvan(): Observable<postviewer> {
+   getPostsByOnvan(onvan:string): Observable<postviewer> {
     return this.http.get<postviewer>('api/Posts')   
   }
 }
