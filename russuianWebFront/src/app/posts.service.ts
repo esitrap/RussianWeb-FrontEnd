@@ -36,6 +36,6 @@ export class PostsService {
      return this.http.get<postviewer[]>('api/Posts')   
    }
    getPostsByOnvan(onvan:string): Observable<postviewer> {
-    return this.http.get<postviewer>('api/Posts')   
+    return this.http.get<postviewer>(`api/Posts/${onvan}`)
   }
 }
