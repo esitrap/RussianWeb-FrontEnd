@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PostViewDetailComponent implements OnInit {
 
   post: postviewer;
-
+ // images: any[];
 
   constructor(
     private postsservice: PostsService, private route: ActivatedRoute
@@ -21,11 +21,15 @@ export class PostViewDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPostsByOnvan();
+   // this.getImages();
   }
   getPostsByOnvan(): void {
     const onvan = this.route.snapshot.paramMap.get('onvan');
     this.postsservice.getPostsByOnvan(onvan)
       .subscribe(post => this.post = post);
     }
-
-}
+//     getImages():void{
+//     this.postsservice.getImages().then(ax =>{ 
+//       this.ax = ax
+// }
+    }

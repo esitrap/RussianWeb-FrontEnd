@@ -41,6 +41,7 @@ import { Auth } from 'src/auth.service';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { PostViewDetailComponent } from './post-view-detail/post-view-detail.component';
 import {FileUploadModule} from 'primeng/fileupload';
+import {GalleriaModule} from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -55,8 +56,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     PostViewComponent,
     LoginpageComponent,
     ValidationpageComponent,
-    PostViewDetailComponent,
-
+    PostViewDetailComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -83,7 +84,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     DropdownModule,
     ReactiveFormsModule,
     OAuthModule.forRoot(),
-    FileUploadModule
+    FileUploadModule,
+    GalleriaModule
   ],
   providers: [PostsService, UsersService, ConfirmationService, AuthGuard, Auth],
   bootstrap: [AppComponent]

@@ -38,4 +38,7 @@ export class PostsService {
    getPostsByOnvan(onvan:string): Observable<postviewer> {
     return this.http.get<postviewer>(`api/Posts/${onvan}`)
   }
+  getImages(): Observable<postviewer> {
+    return this.http.get<postviewer>('api/Posts')
+  }
 }
